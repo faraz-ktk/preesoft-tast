@@ -11,6 +11,9 @@ This is a Laravel 10 application featuring Sanctum authentication, enabling user
 - **Likes**: Like and unlike comments on posts.
 - **User Likes Overview**: View users who have received at least one like on their post comments, including those who liked their own comments.
 
+- **Note**: I create one and pint /post in api.php this can we test from postman to athyundicate third party request from now i just makein api.php one api and get token from log when i login user of register copry the token send from post in header for in request. if the token not availabale on ivalide this should not return the data like posts.
+
+
 ## Requirements
 
 - PHP 8.2
@@ -72,5 +75,9 @@ php artisan serve
 #Demonstration
 For a quick demonstration of the application, you can watch the following video:
 https://www.loom.com/share/64b45bb20e3544898fb3b42ecf560c98
+
+
+
+
 
 
