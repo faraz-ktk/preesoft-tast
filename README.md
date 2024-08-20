@@ -13,7 +13,7 @@ This is a Laravel 10 application featuring Sanctum authentication, enabling user
 
 - **Note**:  I created an endpoint /post in api.php that can be tested using Postman to authenticate third-party requests. For now, I have only implemented one API endpoint in api.php. After logging in or registering a user, you can obtain the token from the logs. Copy this token and include it in the headers when making requests via Postman. If the token is not valid or not provided, the request will not return any data, such as posts.
 - **Api** test the api from postman:  
-- **Featurer testin  as well** test the api from postman:  
+- **Featurer testing  as well** test the api from postman:  
 
 
 
