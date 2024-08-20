@@ -98,7 +98,7 @@ class PostControllerTest extends TestCase
             'body' => 'This should not be updated.',
         ]);
 
-        $response->assertStatus(403); // Assuming you have authorization middleware
+        $response->assertStatus(403); 
     }
 
     /** @test */
@@ -140,7 +140,7 @@ class PostControllerTest extends TestCase
 
         $response = $this->delete('/delete-post/' . $post->id);
 
-        $response->assertStatus(403); // Assuming you have authorization middleware
+        $response->assertStatus(403);
     }
 
     /** @test */
@@ -201,12 +201,10 @@ class PostControllerTest extends TestCase
     $comment = Comment::factory()->create();
     $this->actingAs($user);
 
-    // Simulate liking the comment
     $response = $this->post('/comments/like', [
         'comment_id' => $comment->id,
     ]);
 
-    // Check if the like was added
     $response->assertStatus(200);
     $response->assertJson(['likes_count' => $comment->likes()->count()]);
 }
@@ -217,7 +215,6 @@ class PostControllerTest extends TestCase
     {
         $comment = Comment::factory()->create();
 
-        // Add a like to the comment first
         CommentLike::factory()->create(['comment_id' => $comment->id]);
 
         $response = $this->post('/comments/unlike', [

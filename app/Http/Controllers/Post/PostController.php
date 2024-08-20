@@ -38,7 +38,7 @@ class PostController extends Controller
         ]);
 
         $post = Post::findOrFail($request->id);
-        $this->authorize('update', $post);  // Authorization check
+        $this->authorize('update', $post); 
 
         $post->update([
             'title' => $request->title,
@@ -50,7 +50,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        $this->authorize('delete', $post);  // Authorization check
+        $this->authorize('delete', $post); 
 
         $post->delete();
         return response()->json(['message' => 'Post deleted successfully.']);
@@ -63,16 +63,14 @@ class PostController extends Controller
         ]);
 
         $userId = auth()->id();
-        $user_name = auth()->user()->name; // Get the current user's name
+        $user_name = auth()->user()->name;
 
-        // Create the comment
         $comment = Comment::create([
             'post_id' => $request->post_id,
             'user_id' => $userId,
             'comment' => $request->comment,
         ]);
 
-        // Return the new comment with additional data
         return response()->json([
             'comment_id' => $comment->id,
             'comment' => $comment->comment,
@@ -88,13 +86,11 @@ class PostController extends Controller
         $userId = auth()->id();
         $commentId = $request->comment_id;
 
-        // Add a like if it doesn't exist
         $like = CommentLike::firstOrCreate([
             'comment_id' => $commentId,
             'user_id' => $userId,
         ]);
 
-        // Get the updated like count
         $likesCount = Comment::find($commentId)->likes()->count();
 
         return response()->json([
@@ -134,34 +130,8 @@ class PostController extends Controller
         return view('pages.users-with-likes', ['users' => $users]);
     }
 
-    public function updateComment(Request $request, Comment $comment)
-    {
-        // Ensure the user owns the comment or is authorized to update it
-        $this->authorize('update', $comment);
-
-        $request->validate([
-            'comment' => 'required|string|max:255',
-        ]);
-
-        $comment->update([
-            'comment' => $request->input('comment'),
-        ]);
-
-        return response()->json(['message' => 'Comment updated successfully.']);
-    }
-
-    public function deleteComment(Comment $comment)
-    {
-        // Ensure the user owns the comment or is authorized to delete it
-        $this->authorize('delete', $comment);
-
-        $comment->delete();
-
-        return response()->json(['message' => 'Comment deleted successfully.']);
-    }
     public function getPosts()
     {
-        // Fetch all posts with their related data, if needed
         $posts = Post::with('user', 'comments')->get();
         return response()->json($posts);
     }

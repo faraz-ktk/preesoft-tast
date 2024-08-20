@@ -50,9 +50,8 @@ class AuthControllerTest extends TestCase
     /** @test */
     public function it_can_login_a_user()
     {
-        // Use the factory to create a user
         $user = User::factory()->create([
-            'password' => Hash::make('password'), // Ensure password is correct
+            'password' => Hash::make('password'), 
         ]);
 
         $response = $this->post('/login', [
@@ -68,7 +67,6 @@ class AuthControllerTest extends TestCase
     /** @test */
     public function it_cannot_login_with_invalid_credentials()
     {
-        // Use the factory to create a user
         $user = User::factory()->create([
             'password' => Hash::make('password'),
         ]);
@@ -87,19 +85,15 @@ class AuthControllerTest extends TestCase
     /** @test */
     public function it_can_logout_a_user()
 {
-    // Use the factory to create and authenticate a user
     $user = User::factory()->create();
     $this->actingAs($user);
 
     $response = $this->post('/logout');
 
-    // Check redirection
     $response->assertRedirect('/login');
 
-    // Check session flash message
     $response->assertSessionHas('success', 'You have been logged out successfully.');
 
-    // Check that user is no longer authenticated
     $this->assertGuest();
 }
 }
