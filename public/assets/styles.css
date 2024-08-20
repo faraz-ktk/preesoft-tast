@@ -1,0 +1,214 @@
+:root {
+    --darkgreen: #005361;
+    --white: #fff;
+    --blue: #007bff;
+    --blue-dark: #0056b3;
+    --grey-light: #f8f9fa;
+    --grey-dark: #e0e0e0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--grey-light);
+    font-size: 1.3rem;
+    color: var(--darkgreen);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--white);
+    border-top: 1px solid #ddd;
+}
+
+.tabs-to-dropdown .dropdown-toggle,
+.tabs-to-dropdown .dropdown-item,
+body,
+.tabs-to-dropdown .nav-wrapper a {
+    font-size: 1.3rem;
+}
+
+.tabs-to-dropdown .nav-wrapper {
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+.tabs-to-dropdown .nav-wrapper a {
+    color: var(--darkgreen);
+}
+
+.tabs-to-dropdown .nav-pills .nav-link.active {
+    background-color: var(--darkgreen);
+}
+
+.tabs-to-dropdown .nav-pills li:not(:last-child) {
+    margin-right: 30px;
+}
+
+.tabs-to-dropdown .tab-content .container-fluid {
+    max-width: 1250px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.tabs-to-dropdown .dropdown-menu {
+    border: none;
+    box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
+}
+
+.tabs-to-dropdown .dropdown-item,
+.dropdown-item {
+    padding: 14px 28px;
+}
+
+.tabs-to-dropdown .dropdown-item:active {
+    color: var(--white);
+}
+
+button#dropdownMenuButton {
+    background-color: var(--darkgreen);
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.dropdown-toggle .user-icon {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+@media (min-width: 1280px) {
+    .tabs-to-dropdown .nav-wrapper {
+        padding: 15px 30px;
+    }
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--darkgreen);
+}
+
+.login-container .form-control {
+    border-color: var(--darkgreen);
+}
+
+.login-container .btn-primary {
+    background-color: var(--darkgreen);
+    border: none;
+}
+
+.login-container .btn-primary:hover {
+    background-color: var(--darkgreen);
+}
+
+.login-container .signup-prompt {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-container .signup-prompt a {
+    color: var(--darkgreen);
+    font-weight: bold;
+}
+
+.login-container .signup-prompt a:hover {
+    text-decoration: underline;
+}
+
+.post, .comment {
+    border: 1px solid var(--grey-dark);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.post {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post header {
+    border-bottom: 2px solid var(--grey-dark);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+}
+
+.comment-input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-input input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.comment-input button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.comment-input button:hover {
+    background-color: var(--blue-dark);
+}
+
+.comment-username {
+    font-weight: bold;
+    color: var(--blue);
+    font-size: 0.9rem;
+}
+
+.like-btn {
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    color: var(--blue-dark);
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.btn-custom{
+    background-color: #005361;
+    color: #f8f9fa;
+}
